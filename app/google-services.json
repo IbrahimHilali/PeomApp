@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "794666415678",
+    "firebase_url": "https://peomapp-35223.firebaseio.com",
+    "project_id": "peomapp-35223",
+    "storage_bucket": "peomapp-35223.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794666415678:android:014b39cf3a8eb7f9",
+        "android_client_info": {
+          "package_name": "com.example.peomapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794666415678-uribhqscnaeagh10oa3k4uvkm2v4t8kc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.peomapp",
+            "certificate_hash": "380e67265fc9e3d070226a134788029e53c8b255"
+          }
+        },
+        {
+          "client_id": "794666415678-3jp8o2jd58ennr9f9h64bcc3cfhr74tq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGmvzmfEZR6jXlRphfwJC5-X1YwGavFIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794666415678-3jp8o2jd58ennr9f9h64bcc3cfhr74tq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
