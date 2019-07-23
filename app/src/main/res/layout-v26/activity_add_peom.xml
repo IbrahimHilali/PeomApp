@@ -22,53 +22,51 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textDirection="rtl" />
 
-        <EditText
-            android:id="@+id/poemTitle "
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textDirection="rtl"
-            android:autofillHints="" />
+            android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/poemBody"
-            android:layout_width="match_parent"
-            android:layout_height="379dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:lines="23"
-            android:textAlignment="textStart"
-            android:textDirection="rtl"
-            android:autofillHints="" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/poemBody"
+                    android:layout_width="match_parent"
+                    android:layout_height="303dp"
+                    android:hint="" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/poemID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="" />
+        </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/backMainActivity"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="552dp"
+        android:layout_marginTop="464dp"
         android:layout_marginEnd="36dp"
         android:clickable="true"
+        android:focusable="true"
         android:rotation="90"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/arrow_up_float" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/savePoem"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="628dp"
+        android:layout_marginTop="540dp"
         android:layout_marginEnd="36dp"
         android:clickable="true"
+        android:focusable="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_save" />

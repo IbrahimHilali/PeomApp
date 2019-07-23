@@ -3,8 +3,10 @@ package com.example.peomapp;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.peomapp.ui.login.LoginActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.core.utilities.Utilities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -22,20 +24,13 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        FloatingActionButton addPoem = findViewById(R.id.addPeom);
+
+        addPoem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        FloatingActionButton addPeom = findViewById(R.id.addPeom);
-        addPeom.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent addPeomIntent = new Intent();
-                setContentView(R.layout.activity_main);
+                Intent addPoemIntent = new Intent(getApplicationContext(), AddPeom.class);
+                startActivity(addPoemIntent);
             }
         });
     }
