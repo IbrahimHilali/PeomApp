@@ -2,6 +2,9 @@ package com.example.peomapp.ui.login;
 
 import androidx.annotation.Nullable;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 /**
  * Authentication result : success (user details) or error message.
  */
@@ -21,7 +24,11 @@ class LoginResult {
 
     @Nullable
     LoggedInUserView getSuccess() {
-        return success;
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user.isEmailVerified()) {
+            return success;
+        }
+        return null;
     }
 
     @Nullable
