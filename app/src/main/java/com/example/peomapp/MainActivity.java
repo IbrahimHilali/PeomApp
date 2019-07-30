@@ -2,18 +2,16 @@ package com.example.peomapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.example.peomapp.ui.login.LoginActivity;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.firebase.database.core.utilities.Utilities;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,6 +19,28 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        new FirebaseHelper().readData(new FirebaseHelper.DataStatus() {
+            @Override
+            public void DataIsInserted(Poem poem, String key) {
+
+            }
+
+            @Override
+            public void DataIsLoaded(List<Poem> poems, List<String> keys) {
+                new RecyclerView_Config().setConfig(poems, keys, getApplicationContext());
+
+            }
+
+            @Override
+            public void DataIsUpdated(Poem poem, String key) {
+
+            }
+
+            @Override
+            public void DataIsUpdated() {
+
+            }
+        });
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -29,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         addPoem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent addPoemIntent = new Intent(getApplicationContext(), AddPeom.class);
+                Intent addPoemIntent = new Intent(getApplicationContext(), AddPoemActivity.class);
                 startActivity(addPoemIntent);
             }
         });
